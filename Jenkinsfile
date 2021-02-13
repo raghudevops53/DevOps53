@@ -13,7 +13,7 @@ pipeline {
     }
     
     stage('Same Commits') {
-      when { expression {  GIT_PREVIOUS_COMMIT = GIT_COMMIT } }
+      when { expression {  GIT_PREVIOUS_COMMIT == GIT_COMMIT } }
       steps {
         sh '''
           echo "Run this only if commits are same"
